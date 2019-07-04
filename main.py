@@ -1,9 +1,11 @@
 from firebase_admin import initialize_app, credentials, db
 from dotenv import load_dotenv
-from os import getenv
+from os import getenv, listdir
 from json import loads as loadJson
 
 load_dotenv()
+
+SEED_DATA_FOLDER_PATH = './seeds/'
 
 def openJSON(path):
     with open(path, 'r') as outfile:
@@ -22,8 +24,12 @@ def initiateApp():
 
 def main():
     app = initiateApp()
-    users = db.reference('retailer_app_user', app)
-    print(users.get())
+    for file in listdir(SEED_DATA_FOLDER_PATH):
+        collection = file.split('.')[0]
+        print("- seeding " + collection + " data")
+
+        seed_data = openJSON(SEED_DATA_FOLDER_PATH + file)
+        db.reference(collection, app).set(seed_data)
 
 
 if __name__ == '__main__':
