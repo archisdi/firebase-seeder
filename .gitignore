@@ -10,7 +10,7 @@ yarn-error.log
 coverage
 .nyc_output
 **/storage/*.json
-
+.vscode
 
 # Editor directories and files
 .idea

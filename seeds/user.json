@@ -1,0 +1,24 @@
+{
+    "detail": {
+      "DJmzp9ThKNa7SkFOJVGtRnVNNwp1": {
+        "userId": "DJmzp9ThKNa7SkFOJVGtRnVNNwp1",
+        "entityId": "10CEU1NR",
+        "entityType": 2,
+        "phoneNumber": "+6281242480700",
+        "isVerified": false
+      }
+    },
+    "token": {
+      "refresh": {
+        "DJmzp9ThKNa7SkFOJVGtRnVNNwp1": {
+          "someRandomRefreshTokenString": {
+            "eid": "10CEU1NR",
+            "uid": "DJmzp9ThKNa7SkFOJVGtRnVNNwp1"
+          }
+        }
+      },
+      "fcm": {
+        "DJmzp9ThKNa7SkFOJVGtRnVNNwp1": "fcmtoken"
+      }
+    }
+}
