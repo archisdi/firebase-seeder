@@ -9,8 +9,11 @@ def generate_store_code(initial =''):
 
     epoch = datetime.datetime(2017, 1, 1, 0, 0)
 
-    def int2base(x, b=36, alphabet='0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'):
+    def int2base(x, b=31, alphabet='0123456789BCDFGHJKLMNPQRSTVWXYZ'):
         """ Convert an integer to its string representation in a given base """
+
+        if b > len(alphabet):
+            raise Exception('base exceeding dictonary length')
 
         if isinstance(x, complex):  # return a tuple
             return (int2base(x.real, b, alphabet), int2base(x.imag, b, alphabet))
